@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 import { DashboardComponent } from './dashboard.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroService } from './hero.service';
+import { TasksComponent } from './tasks.component';
+import { TaskDetailComponent } from './task-detail.component';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'my-app',
@@ -12,7 +12,7 @@ import { HeroService } from './hero.service';
     <h1>{{title}}</h1>
     <nav>
       <a [routerLink]="['Dashboard']">Dashboard</a>
-      <a [routerLink]="['Heroes']">Heroes</a>
+      <a [routerLink]="['Tasks']">Tasks</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -20,7 +20,7 @@ import { HeroService } from './hero.service';
   directives: [ROUTER_DIRECTIVES],
   providers: [
     ROUTER_PROVIDERS,
-    HeroService
+    TaskService
   ]
 })
 @RouteConfig([
@@ -32,15 +32,15 @@ import { HeroService } from './hero.service';
   },
   {
     path: '/detail/:id',
-    name: 'HeroDetail',
-    component: HeroDetailComponent
+    name: 'TaskDetail',
+    component: TaskDetailComponent
   },
   {
-    path: '/heroes',
-    name: 'Heroes',
-    component: HeroesComponent
+    path: '/tasks',
+    name: 'Tasks',
+    component: TasksComponent
   }
 ])
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'My tasks';
 }
