@@ -11,8 +11,8 @@ import { TaskService } from './task.service';
   template: `
     <h1>{{title}}</h1>
     <nav>
-      <a [routerLink]="['Dashboard']">Dashboard</a>
-      <a [routerLink]="['Tasks']">Tasks</a>
+      <a [routerLink]="['Dashboard']">Current tasks</a>
+      <a [routerLink]="['Tasks']">All Tasks</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -42,5 +42,5 @@ import { TaskService } from './task.service';
   }
 ])
 export class AppComponent {
-  title = 'My tasks';
+  title = 'My tasks application';
 }

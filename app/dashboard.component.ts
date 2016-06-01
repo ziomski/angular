@@ -20,7 +20,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.taskService.getTasks()
-      .then(tasks => this.tasks = tasks.slice(1,5));
+      .then(tasks => this.tasks = tasks;
   }
 
   gotoDetail(task: Task) {
