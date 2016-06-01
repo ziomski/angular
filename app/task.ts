@@ -3,5 +3,5 @@ export class Task {
   task_date: string;
   name: string;
   description: string;
-  done: boolean = false;
+  done: boolean;
 }

@@ -3,12 +3,12 @@
   <li *ngFor="let task of tasks"
     [class.selected]="task === selectedTask"
     (click)="onSelect(task)">
-    <span class="badge">{{task.id}}</span> {{task.name}}
+    <span class="badge">{{task.task_date}}</span> {{task.name}}
   </li>
 </ul>
 <div *ngIf="selectedTask">
   <h2>
-    {{selectedTask.name | uppercase}} is selected
+    {{selectedTask.name | uppercase}}
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>

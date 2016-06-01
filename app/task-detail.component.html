@@ -1,10 +1,28 @@
 <div *ngIf="task">
   <h2>{{task.name}} details!</h2>
   <div>
-    <label>id: </label>{{task.id}}</div>
-  <div>
-    <label>name: </label>
-    <input [(ngModel)]="task.name" placeholder="name" />
+    <label>id: </label>
+    {{task.id}} 
   </div>
+  <div>
+    <label>Date: </label>
+    {{task.task_date}}
+  </div>
+  <div>
+    <label>Name: </label>
+    {{task.name}}
+  </div>
+  <div>
+    <label>Description: </label>
+    <textarea name="description" rows="4" cols="50" [(ngModel)]="task.description" placeholder="description"></textarea>
+  </div> 
+  <div>
+  	<label>Finised: </label>
+	<select [(ngModel)]="task.done">
+   	  <option [ngValue]="false">Not finished</option>
+   	  <option [ngValue]="true">Finished</option>
+	</select>
+  </div>
+
   <button (click)="goBack()">Back</button>
 </div>
