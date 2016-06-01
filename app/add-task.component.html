@@ -1,0 +1,29 @@
+<div>
+  <h2>Add new task!</h2>
+  <div>
+    <label>id: </label>
+    <input #id_input placeholder="id" [ngModel]="id" (keyup)="id=id_input.value"/> 
+  </div>
+  <div>
+    <label>Date: </label>
+    <input #date_input placeholder="date" [ngModel]="task_date" (keyup)="task_date=date_input.value"/>
+  </div>
+  <div>
+    <label>Name: </label>
+    <input #name_input placeholder="name" [ngModel]="name" (keyup)="name=name_input.value"/>
+  </div>
+  <div>
+    <label>Description: </label>
+    <textarea #description_input placeholder="description" name="description" rows="4" cols="50" [(ngModel)]="description" (keyup)="description=description_input.value"></textarea>
+  </div> 
+  <div>
+  	<label>Finised: </label>
+	<select #status_input [(ngModel)]="done" (keyup)="done=status_input.value">
+   	  <option [ngValue]="false">Not finished</option>
+   	  <option [ngValue]="true">Finished</option>
+	</select>
+  </div>
+
+  <button (click)="Validate()">Add task</button>
+  <button (click)="goBack()">Back</button>
+</div>

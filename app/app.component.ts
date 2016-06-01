@@ -4,6 +4,7 @@ import { RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/route
 import { DashboardComponent } from './dashboard.component';
 import { TasksComponent } from './tasks.component';
 import { TaskDetailComponent } from './task-detail.component';
+import { AddTaskComponent } from './add-task.component';
 import { TaskService } from './task.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { TaskService } from './task.service';
     <nav>
       <a [routerLink]="['Dashboard']">Current tasks</a>
       <a [routerLink]="['Tasks']">All Tasks</a>
+      <a [routerLink]="['AddTask']">Add task</a>
     </nav>
     <router-outlet></router-outlet>
   `,
@@ -39,6 +41,11 @@ import { TaskService } from './task.service';
     path: '/tasks',
     name: 'Tasks',
     component: TasksComponent
+  },
+  {
+    path: '/add',
+    name: 'AddTask',
+    component: AddTaskComponent
   }
 ])
 export class AppComponent {
