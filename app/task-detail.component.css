@@ -1,6 +1,10 @@
+h2 {
+  color: #204060;
+}
+
 label {
   margin: .5em 0;
-  color: #607D8B;
+  color: #1C6EA5;
   font-weight: bold;
   display: inline-block;
   width: 100px;
@@ -15,14 +19,14 @@ input {
 button {
   margin-top: 20px;
   font-family: Arial;
-  background-color: #eee;
+  background-color: #1C6EA5;
   border: none;
   padding: 5px 10px;
   border-radius: 4px;
   cursor: pointer; cursor: hand;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: #449DD9;
 }
 button:disabled {
   background-color: #eee;
