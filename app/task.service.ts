@@ -17,4 +17,8 @@ export class TaskService {
   addTask(t_id, t_task_date, t_name, t_description, t_done){
 		TASKS.push({id: +t_id, task_date: t_task_date, name: t_name, description: t_description, done: t_done});
   }
+
+  getLastId() {
+    return TASKS.length;
+  }
 }

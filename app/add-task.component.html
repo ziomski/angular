@@ -1,20 +1,24 @@
 <div>
-  <h2>Add new task!</h2>
+  <h2>Add a new task!</h2>
+  <form [ngFormModel]="addForm" >
   <div>
     <label>id: </label>
-    <input #id_input placeholder="id" [ngModel]="id" (keyup)="id=id_input.value"/> 
+    <input type="text" [(ngModel)]="new_id" disabled/>
   </div>
   <div>
     <label>Date: </label>
-    <input #date_input placeholder="date" [ngModel]="task_date" (keyup)="task_date=date_input.value"/>
+    <input placeholder="date" ngControl="task_date"/>
+    <em *ngIf="!task_date.valid">Must be dd-MM-yyyy</em>
   </div>
   <div>
     <label>Name: </label>
-    <input #name_input placeholder="name" [ngModel]="name" (keyup)="name=name_input.value"/>
+    <input placeholder="name" ngControl="name" />
+    <em *ngIf="!name.valid">Required</em>
   </div>
   <div>
     <label>Description: </label>
-    <textarea #description_input placeholder="description" name="description" rows="4" cols="50" [(ngModel)]="description" (keyup)="description=description_input.value"></textarea>
+    <textarea placeholder="description" rows="4" cols="50" ngControl="description"></textarea>
+    <em *ngIf="!description.valid">Required & minimum 10 characters</em>
   </div> 
   <div>
   	<label>Finised: </label>
@@ -23,7 +27,8 @@
    	  <option [ngValue]="true">Finished</option>
 	</select>
   </div>
-
-  <button (click)="Validate()">Add task</button>
+  </form>
   <button (click)="goBack()">Back</button>
+  <button *ngIf="name.valid && task_date.valid && description.valid"  (click)="Validate()">Add task</button>
+
 </div>
