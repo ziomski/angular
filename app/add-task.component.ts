@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FORM_DIRECTIVES, FormBuilder, Control, ControlGroup, Validators} from '@angular/common';
 import { RouteParams } from '@angular/router-deprecated';
+import { Router } from '@angular/router-deprecated';
 
 import { Task } from './task';
 import { TaskService } from './task.service';
@@ -22,6 +23,7 @@ export class AddTaskComponent implements OnInit {
   new_id: number;
  
   constructor(
+    private router: Router,
     private taskService: TaskService,
     private routeParams: RouteParams,
     private builder: FormBuilder
@@ -42,6 +44,7 @@ export class AddTaskComponent implements OnInit {
 
   Validate() {
     this.taskService.addTask(this.new_id, this.task_date.value, this.name.value, this.description.value, this.done);
+    this.router.navigate(['Dashboard']);
   }
 
   goBack() {
