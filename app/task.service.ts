@@ -14,7 +14,7 @@ export class TaskService {
     );
   }
 
-  addTask(id, task_date, name, description, done){
-		TASKS.push({"id":id, "task_date":task_date, "name": name, "description": description, "done": done});
+  addTask(t_id, t_task_date, t_name, t_description, t_done){
+		TASKS.push({id: +t_id, task_date: t_task_date, name: t_name, description: t_description, done: t_done});
   }
 }
